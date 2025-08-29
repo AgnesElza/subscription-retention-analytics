@@ -7,7 +7,7 @@ The goal is to **identify at-risk users** and provide **actionable insights** fo
 
 ---
 
-## 📌 Project Workflow
+## Project Workflow
 1. **Data Understanding** – Explore users, transactions, and activity logs.  
 2. **Data Preparation** – Clean and engineer features for churn modeling.  
 3. **Exploratory Data Analysis (EDA)** – Identify patterns linked with churn.  
@@ -18,7 +18,7 @@ The goal is to **identify at-risk users** and provide **actionable insights** fo
 
 ---
 
-## 📊 Dataset
+## Dataset
 - **Source**: [KKBox Churn Prediction Challenge (Kaggle)](https://www.kaggle.com/c/kkbox-churn-prediction-challenge)  
 - **Key Tables**:  
   - `train.csv` – Labels (churned or not).  
@@ -28,7 +28,7 @@ The goal is to **identify at-risk users** and provide **actionable insights** fo
 
 ---
 
-## 🔍 Key Insights (EDA)
+## Key Insights (EDA)
 - Users with **shorter plans (<1 month)** churn more often.  
 - **Auto-renewal** strongly reduces churn.  
 - **Long inactivity gaps** are highly predictive of churn.  
@@ -36,11 +36,11 @@ The goal is to **identify at-risk users** and provide **actionable insights** fo
 
 ---
 
-## 🤖 Modeling
+## Modeling
 - **Baseline:** Logistic Regression → poor performance (AUC ≈ 0.42).  
 - **Best Model:** XGBoost → strong performance (AUC ≈ 0.98, AP ≈ 0.79).  
 
-📈 **Feature Importance (XGBoost):**
+**Feature Importance (XGBoost):**
 - `auto_renew_rate`  
 - `last_gap_days`  
 - `cancel_rate`  
@@ -49,14 +49,14 @@ The goal is to **identify at-risk users** and provide **actionable insights** fo
 
 ---
 
-## 🧩 Explainability (SHAP)
+## Explainability (SHAP)
 - **Auto-renewal** sharply decreases churn probability.  
 - **Longer inactivity gaps** strongly increase churn risk.  
 - SHAP plots highlight **individual predictions** and **global drivers** of churn.  
 
 ---
 
-## 🚀 How to Run
+## How to Run
 1. Clone the repo:
    ```bash
    git clone https://github.com/your-username/kkbox-churn-prediction.git
@@ -77,7 +77,7 @@ The goal is to **identify at-risk users** and provide **actionable insights** fo
 
 ---
 
-## 🎯 Causal Insights (beyond prediction)
+## Causal Insights (beyond prediction)
 
 - **Question asked:** *Does auto-renewal itself prevent churn, or is it just a proxy for engagement?*  
 - **Local Effect Analysis (IPW):** Auto-renew reduces churn in the overlap region (~26 pp).  
@@ -86,7 +86,7 @@ The goal is to **identify at-risk users** and provide **actionable insights** fo
 
 ---
 
-## 📌 Business Recommendations
+## Business Recommendations
 - Focus on **increasing engagement** (shorter listening gaps, frequent plays) rather than relying solely on billing settings.  
 - Use churn prediction models to **flag at-risk users early**, but follow up with **engagement-focused interventions** (playlists, recommendations, discounts).  
 - Auto-renew is useful administratively, but **retention strategy must target behavior**.  
